@@ -23,8 +23,8 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.web.client.RestTemplateBuilder;
 import org.springframework.cloud.circuitbreaker.commons.Customizer;
-import org.springframework.cloud.circuitbreaker.r4j.R4JCircuitBreakerFactory;
-import org.springframework.cloud.circuitbreaker.r4j.R4JConfigBuilder;
+import org.springframework.cloud.circuitbreaker.resilience4j.Resilience4JCircuitBreakerFactory;
+import org.springframework.cloud.circuitbreaker.resilience4j.Resilience4JConfigBuilder;
 import org.springframework.context.annotation.Bean;
 import org.springframework.web.client.RestTemplate;
 
@@ -41,8 +41,8 @@ public class R4jCircuitbreakerDemoApplication {
 	}
 
 	@Bean
-	public Customizer<R4JCircuitBreakerFactory> defaultCustomizer() {
-		return factory -> factory.configureDefault(id -> new R4JConfigBuilder(id)
+	public Customizer<Resilience4JCircuitBreakerFactory> defaultCustomizer() {
+		return factory -> factory.configureDefault(id -> new Resilience4JConfigBuilder(id)
 				.timeLimiterConfig(TimeLimiterConfig.custom().timeoutDuration(Duration.ofSeconds(3)).build())
 				.circuitBreakerConfig(CircuitBreakerConfig.ofDefaults())
 				.build());
