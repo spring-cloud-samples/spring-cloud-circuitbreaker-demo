@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: org.springframework.cloud:spring-cloud-netflix-ribbon:2.1.0.BUILD-SNAPSHOT">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/org/springframework/cloud/spring-cloud-netflix-ribbon/2.1.0.BUILD-SNAPSHOT/spring-cloud-netflix-ribbon-2.1.0.BUILD-20181214.140058-1118.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/org/springframework/cloud/spring-cloud-netflix-ribbon/2.1.0.BUILD-SNAPSHOT/spring-cloud-netflix-ribbon-2.1.0.BUILD-20181214.140058-1118-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/org/springframework/cloud/spring-cloud-netflix-ribbon/2.1.0.BUILD-SNAPSHOT/spring-cloud-netflix-ribbon-2.1.0.BUILD-20181214.140058-1118-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
