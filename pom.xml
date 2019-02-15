@@ -43,10 +43,10 @@
         </dependencies>
     </dependencyManagement>
     <modules>
-        <module>hystrix-circuitbreaker-demo</module>
-        <module>r4j-circuitbreaker-demo</module>
-        <module>reactive-rj4-circuitbreaker-demo</module>
-        <module>reactive-hystrix-circuitbreaker-demo</module>
+        <module>spring-cloud-circuitbreaker-demo-hystrix</module>
+        <module>spring-cloud-circuitbreaker-demo-reactive-hystrix</module>
+        <module>spring-cloud-circuitbreaker-demo-resilience4j</module>
+        <module>spring-cloud-circuitbreaker-demo-reactive-resilience4j</module>
     </modules>
     <build>
         <plugins>
