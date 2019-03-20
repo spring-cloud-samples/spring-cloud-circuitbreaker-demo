@@ -34,7 +34,7 @@ public class HttpBinService {
 	private WebClient rest;
 
 	public HttpBinService(WebClient.Builder builder) {
-		this.rest = builder.baseUrl("http://httpbin.org").build();
+		this.rest = builder.baseUrl("https://httpbin.org").build();
 	}
 
 	public Mono<Map> get() {
