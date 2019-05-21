@@ -33,7 +33,7 @@ public class HttpBinService {
 	private WebClient rest;
 
 	public HttpBinService(WebClient.Builder builder) {
-		this.rest = builder.baseUrl("http://httpbin.org").build();
+		this.rest = builder.baseUrl("https://httpbin.org").build();
 	}
 
 	public Mono<Map> get() {
@@ -41,7 +41,7 @@ public class HttpBinService {
 	}
 
 	public Mono<Map> delay(int seconds) {
-		return this.rest.get().uri("http://httpbin.org/delay/{seconds}", seconds).retrieve().bodyToMono(Map.class);
+		return this.rest.get().uri("https://httpbin.org/delay/{seconds}", seconds).retrieve().bodyToMono(Map.class);
 	}
 
 	public Flux<String> fluxDelay(int seconds) {

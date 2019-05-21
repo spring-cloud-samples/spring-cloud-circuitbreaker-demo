@@ -33,12 +33,12 @@ public class HttpBinService {
 	}
 
 	public Map get() {
-		return rest.getForObject("http://httpbin.org/get", Map.class);
+		return rest.getForObject("https://httpbin.org/get", Map.class);
 
 	}
 
 	public Map delay(int seconds) {
-		return rest.getForObject("http://httpbin.org/delay/" + seconds, Map.class);
+		return rest.getForObject("https://httpbin.org/delay/" + seconds, Map.class);
 	}
 
 	public Supplier<Map> delaySuppplier(int seconds) {
