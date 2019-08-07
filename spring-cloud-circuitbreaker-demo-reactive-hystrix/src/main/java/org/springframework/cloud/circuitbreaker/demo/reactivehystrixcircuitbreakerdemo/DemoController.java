@@ -20,12 +20,15 @@ import reactor.core.publisher.Mono;
 
 import java.util.HashMap;
 import java.util.Map;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
 import org.springframework.cloud.circuitbreaker.commons.CircuitBreakerFactory;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
+
 import com.netflix.hystrix.HystrixCommandProperties;
 
 /**
@@ -52,19 +55,21 @@ public class DemoController {
 	@GetMapping("/delay/{seconds}")
 	public Mono<Map> delay(@PathVariable int seconds) {
 
-		return new ReactiveHystrixCircuitBreaker("foo", HystrixCommandProperties.Setter().withExecutionTimeoutInMilliseconds(3000)).run(httpBin.delay(seconds),
+		return new ReactiveHystrixCircuitBreaker("foo", HystrixCommandProperties.Setter()
+				.withExecutionTimeoutInMilliseconds(3000)).run(httpBin.delay(seconds),
 				t -> {
 					LOG.warn("delay call failed error", t);
 					Map<String, String> fallback = new HashMap<>();
 					fallback.put("hello", "world");
 					return Mono.just(fallback);
-		});
+				});
 	}
 
 	@GetMapping("/fluxdelay/{seconds}")
 	public Flux<String> fluxDelay(@PathVariable int seconds) {
 
-		return new ReactiveHystrixCircuitBreaker("foo", HystrixCommandProperties.Setter().withExecutionTimeoutInMilliseconds(3000)).run(httpBin.fluxDelay(seconds),
+		return new ReactiveHystrixCircuitBreaker("foo", HystrixCommandProperties.Setter()
+				.withExecutionTimeoutInMilliseconds(3000)).run(httpBin.fluxDelay(seconds),
 				t -> {
 					LOG.warn("delay call failed error", t);
 					return Flux.just("hello", "world");
