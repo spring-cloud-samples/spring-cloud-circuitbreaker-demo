@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *      http://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -33,12 +33,12 @@ public class HttpBinService {
 	}
 
 	public Map get() {
-		return rest.getForObject("http://httpbin.org/get", Map.class);
+		return rest.getForObject("https://httpbin.org/get", Map.class);
 
 	}
 
 	public Map delay(int seconds) {
-		return rest.getForObject("http://httpbin.org/delay/" + seconds, Map.class);
+		return rest.getForObject("https://httpbin.org/delay/" + seconds, Map.class);
 	}
 
 	public Supplier<Map> delaySuppplier(int seconds) {
