@@ -17,8 +17,8 @@ package org.springframework.cloud.circuitbreaker.demo.reactivehystrixcircuitbrea
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.cloud.circuitbreaker.commons.Customizer;
-import org.springframework.cloud.circuitbreaker.hystrix.ReactiveHystrixCircuitBreakerFactory;
+import org.springframework.cloud.client.circuitbreaker.Customizer;
+import org.springframework.cloud.netflix.hystrix.ReactiveHystrixCircuitBreakerFactory;
 import org.springframework.context.annotation.Bean;
 import org.springframework.web.reactive.function.client.WebClient;
 import com.netflix.hystrix.HystrixCommandGroupKey;
