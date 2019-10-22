@@ -16,6 +16,7 @@
 package org.springframework.cloud.circuitbreaker.demo.reactiveresilience4jcircuitbreakerdemo;
 
 import io.github.resilience4j.circuitbreaker.CircuitBreakerConfig;
+import io.github.resilience4j.circuitbreaker.CircuitBreakerRegistry;
 import io.github.resilience4j.timelimiter.TimeLimiterConfig;
 
 import java.time.Duration;
@@ -41,8 +42,13 @@ public class ReactiveResilience4JCircuitbreakerDemoApplication {
 
 	@Bean
 	public Customizer<ReactiveResilience4JCircuitBreakerFactory> defaultCustomizer() {
-		return factory -> factory.configureDefault(id -> new Resilience4JConfigBuilder(id)
-				.circuitBreakerConfig(CircuitBreakerConfig.ofDefaults())
-				.timeLimiterConfig(TimeLimiterConfig.custom().timeoutDuration(Duration.ofSeconds(3)).build()).build());
+		CircuitBreakerRegistry cbr = CircuitBreakerRegistry.ofDefaults();
+		return factory -> {
+			factory.configureDefault(id -> new Resilience4JConfigBuilder(id)
+					.circuitBreakerConfig(CircuitBreakerConfig.ofDefaults())
+					.timeLimiterConfig(TimeLimiterConfig.custom().timeoutDuration(Duration.ofSeconds(3)).build())
+					.circuitBreakerConfig(CircuitBreakerConfig.custom().failureRateThreshold(10)
+							.slowCallRateThreshold(5).slowCallRateThreshold(2).build()).build());
+		};
 	}
 }
