@@ -1,0 +1,8 @@
+spring:
+  application:
+    name: spring-retry-demo
+
+server:
+  port: 8080
+
+
