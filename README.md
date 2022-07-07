@@ -5,8 +5,7 @@ with various circuit breaker implementations.
 
 # Non-Reactive Samples
 
-There are two non-reactive samples in this repo, `spring-cloud-circuitbreaker-hystrix` and
-`spring-cloud-circuitbreaker-resilience4j`.
+The non-reactive example can be found in `spring-cloud-circuitbreaker-resilience4j`.
 
 When these apps are running there are two endpoints available for testing
 
@@ -19,10 +18,9 @@ equal to 3 the circuit breaker will time out and return the response `{"hello": 
 
 # Reactive Samples
 
-There are three reactive samples in this repo, `spring-cloud-circuitbreaker-demo-reactive`,
-`spring-cloud-circuitbreaker-demo-reactive-hystrix`, and `spring-cloud-circuibreaker-demo-reactive-resilience4j`.
+There are two reactive samples in this repo, `spring-cloud-circuitbreaker-demo-reactive` and `spring-cloud-circuibreaker-demo-reactive-resilience4j`.
 
-## Hystrix and Resilience4J Reactive Samples
+## Resilience4J Reactive Samples
 
 Both of these samples contain the same two endpoints as the non-reactive samples 
 (which in this case return a `Mono`), but also
