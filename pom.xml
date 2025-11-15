@@ -38,6 +38,7 @@
         <module>spring-cloud-circuitbreaker-demo-resilience4j</module>
         <module>spring-cloud-circuitbreaker-demo-reactive-resilience4j</module>
         <module>spring-cloud-circuitbreaker-demo-reactive</module>
+		<module>spring-cloud-circuitbreaker-demo-spring-retry</module>
     </modules>
     <build>
         <plugins>
